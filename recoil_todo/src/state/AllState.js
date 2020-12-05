@@ -4,13 +4,9 @@
  * @Author: love-coding
  * @Date: 2020-12-03 21:50:16
  * @LastEditors: love-coding
- * @LastEditTime: 2020-12-05 11:34:43
+ * @LastEditTime: 2020-12-05 15:30:17
  */
 import { atom, selector} from 'recoil';
-//  const textState = atom({
-//     key: 'textState', // unique ID (with respect to other atoms/selectors)
-//     default: '', // default value (aka initial value)
-//   });
  const todoListState = atom({
     key: 'todoListState', // unique ID (with respect to other atoms/selectors)
     default: [], // default value (aka initial value)
@@ -24,7 +20,6 @@ import { atom, selector} from 'recoil';
   get: ({get}) => {
     const filter = get(todoListFilterState);
     const list = get(todoListState);
-
     switch (filter) {
       case 'Show Completed':
         return list.filter((item) => item.isComplete);
